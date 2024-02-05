@@ -2,7 +2,7 @@ import videos from '../data.json'
 
 function Videos() {
     return (
-        <div className="videos">
+        <section className="videos">
            {videos.map(video => {
              return <div className='videos-data'>
                 <a href={video.url} target="_blank">
@@ -11,7 +11,7 @@ function Videos() {
                 </a>
              </div>             
            })}
-        </div>
+        </section>
     )
 }
 
