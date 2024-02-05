@@ -1,9 +1,9 @@
-import videos from '../data.json'
+function Videos({filteredVideos}) {
+    console.log(filteredVideos);
 
-function Videos() {
     return (
         <section className="videos">
-           {videos.map((video, idx) => {
+           {filteredVideos.map((video, idx) => {
              return <div className='videos-data' key={idx}>
                 <a href={video.url} target="_blank">
                     <img src={video.cover} alt={video.title} />

@@ -1,32 +1,25 @@
-import videos from '../data.json'
-
-function SearchBar() {
+function SearchBar({ videos, handleSearchVideo }) {
   return (
     <form>
-        <label htmlFor="search-bar">Search by title: </label>
-        <input type="text" id="search-bar" name="search-bar" onInput={(e) => SearchVideoByTitle(e.currentTarget.value)}/>
+      <label htmlFor="search-bar">Search by title: </label>
+      <input type="text" id="search-bar" name="search-bar" onInput={(e) => SearchVideoByTitle(e.currentTarget.value, videos, handleSearchVideo)} />
     </form>
   )
 }
 
-// kurs html, css, bootstrap
+const SearchVideoByTitle = (title, videos, handleSearchVideo) => {
+  let videoList = []
 
-const SearchVideoByTitle = (title) => {
-  // console.log(title);
   videos.forEach(video => {
     const videoTitle = video.title.toLowerCase()
     const inputtedTitle = title.toLowerCase()
 
-    // if(videoTitle === inputtedTitle){
-    //   console.log('works');
-    // }
-
-    if(videoTitle.includes(inputtedTitle)){
-      console.log('works');
-    }else{
-      console.log('nope');
+    if (videoTitle.includes(inputtedTitle)) {
+      videoList.push(video);
     }
   })
+
+  handleSearchVideo(videoList);
 }
 
 export default SearchBar
