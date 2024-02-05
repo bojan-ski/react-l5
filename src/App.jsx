@@ -1,9 +1,14 @@
-import Videos from "./components/Videos"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
 
 function App() {
   return (
     <main>
-       <Videos />
+       <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+        </Routes>
+       </BrowserRouter>
     </main>
   )
 }
