@@ -1,6 +1,6 @@
 import videos from '../data.json'
 
-function Videos({video}) {
+function Videos() {
     return (
         <div className="videos">
            {videos.map(video => {
