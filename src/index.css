@@ -15,6 +15,11 @@
     text-align: center;
 }
 
+.container form{
+    text-align: center;
+    margin: 15px 0;
+}
+
 .container .videos{
     background-color: #d6d4d4;
     display: flex;
